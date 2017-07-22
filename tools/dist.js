@@ -6,6 +6,7 @@ const packageJson = require('../package.json');
 
 delete packageJson.scripts;
 delete packageJson.devDependencies;
+delete packageJson.private;
 fs.writeFileSync('./dist/package.json', JSON.stringify(packageJson), 'utf-8')
 
 copy('./LICENSE', './dist');
