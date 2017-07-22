@@ -1,6 +1,6 @@
 {
   "name": "aytacworld-angular-markdown",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular markdown directive with code highlighting and row numbers",
   "private": true,
   "scripts": {
@@ -74,5 +74,8 @@
     "typescript": "^2.4.2",
     "uglify-js": "^3.0.25",
     "webpack": "^3.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "^4.3.0"
   }
 }
