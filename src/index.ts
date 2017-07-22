@@ -1,3 +1,3 @@
-export * from './markdown.directive';
+export { MarkdownDirective } from './markdown.directive';
 
-export * from './markdown.module';
+export { MarkdownModule } from './markdown.module';

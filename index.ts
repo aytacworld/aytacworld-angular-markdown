@@ -1,1 +1,1 @@
-export * from './src/index';
+export { MarkdownDirective, MarkdownModule } from './src/index';
