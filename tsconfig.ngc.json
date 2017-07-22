@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./.temp"
+  },
+  "files": [
+    "./.temp/index.ts"
+  ]
+}
