@@ -2,11 +2,11 @@
 
 Angular markdown directive with code highlighting and row numbers
 
-# Install
+## Install
 
 `npm install --save aytacworld-angular-markdown`
 
-# Usage
+## Usage
 
 app.module.ts
 
@@ -32,7 +32,34 @@ import { Component } from '@angular/core';
 export class AppComponent { }
 ```
 
-## Configurations
+### Adding highlight.js style
+
+#### Styles can be found at
+[https://github.com/isagalaev/highlight.js/tree/master/src/styles](https://github.com/isagalaev/highlight.js/tree/master/src/styles)
+
+#### Using angular CLI
+
+1. `npm install --save highlight.js`
+2. Add it to `.angular-cli.json`
+```javascript
+{
+  ...,
+  "apps": [{
+    ...,
+    "styles": [
+      ...,
+      "../node_modules/highlight.js/styles/monokai-sublime.css"
+    ],
+    ...
+  }],
+  ...
+}
+```
+
+#### Using CDN
+add `<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">` inside `head` tag in `index.html`
+
+## Api
 
 |Input       |  Description   |  Type  |  Default  |
 |------------|----------------|--------|-----------|
