@@ -1,5 +1,6 @@
+// tslint:disable:max-classes-per-file
 import { Component } from '@angular/core';
-import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MarkdownDirective } from './markdown.directive';
 
 @Component({ template: `<div [markdown]="markdownInput" ></div>` })
@@ -13,7 +14,7 @@ describe('MarkdownDirective', () => {
   let el: HTMLElement;
   let comp: TestComponent1 | TestComponent2;
 
-  function getHtml(selector: string = 'div'): string | undefined {
+  function getHtml (selector: string = 'div'): string | undefined {
     const ret = el && el.querySelector && el.querySelector(selector);
     if (ret) {
       return ret.innerHTML;
@@ -21,7 +22,7 @@ describe('MarkdownDirective', () => {
     return undefined;
   }
 
-  function getHtmlCount(selector: string = 'div'): number {
+  function getHtmlCount (selector: string = 'div'): number {
     const ret = el && el.querySelectorAll && el.querySelectorAll(selector);
     if (ret) {
       return ret.length;
@@ -29,7 +30,7 @@ describe('MarkdownDirective', () => {
     return 0;
   }
 
-  function getText(selector: string = 'div'): string | undefined {
+  function getText (selector: string = 'div'): string | undefined {
     const ret = el && el.querySelector && el.querySelector(selector);
     if (ret) {
       return ret.textContent || undefined;
@@ -74,7 +75,7 @@ describe('MarkdownDirective', () => {
       expect(getHtmlCount('.line-number span')).toEqual(3);
       expect(getText('code')).toBe('class A {\nconst x:number;\n}\n');
     });
-  })
+  });
 
   describe('all parameters filled in', () => {
     beforeEach(() => {
@@ -122,7 +123,6 @@ describe('MarkdownDirective', () => {
       expect(getHtml('code')).toBe('class A {\nconst x:number;\n}\n');
     });
 
-
     it('should not add line-numbers if highlight Input is set to false', () => {
       comp.markdownInput = '```typescript\nclass A {\nconst x:number;\n}```';
       comp.highlight = false;
@@ -136,5 +136,5 @@ describe('MarkdownDirective', () => {
       fixture.detectChanges();
       expect(getHtmlCount('.line-number span')).toEqual(0);
     });
-  })
+  });
 });
