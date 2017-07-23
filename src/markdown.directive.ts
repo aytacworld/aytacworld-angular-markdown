@@ -9,9 +9,9 @@ export class MarkdownDirective implements OnInit {
   @Input() highlight: boolean = true;
   @Input() lineNumbers: boolean = true;
 
-  constructor(private el: ElementRef) { }
+  constructor (private el: ElementRef) { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
     this.el.nativeElement.innerHTML = parse(this.markdown, { sanitize: this.sanitize });
     if (this.highlight) {
       const preTags: Array<HTMLPreElement> = this.el.nativeElement.getElementsByTagName('pre');
@@ -25,14 +25,14 @@ export class MarkdownDirective implements OnInit {
 
   }
 
-  private removeLines(pre: HTMLPreElement): void {
+  private removeLines (pre: HTMLPreElement): void {
     const span = pre.querySelector('span.line-number');
     if (span) {
       pre.removeChild(span);
     }
   }
 
-  private addLines(pre: HTMLPreElement): void {
+  private addLines (pre: HTMLPreElement): void {
     const style = 'style="float: left;text-align: right;"';
     const rowStyle = 'style="display: block;padding: 0 .5em 0 1em;border-right: 1px solid;margin-right: 5px;"';
     pre.innerHTML = '<span class="line-number" ' + style + '></span>' + pre.innerHTML + '<span class="cl"></span>';
