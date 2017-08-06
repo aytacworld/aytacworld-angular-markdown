@@ -76,7 +76,7 @@ still need to add more tests
 
 ## Examples
 
-[http://plnkr.co/edit/NULN2U](http://plnkr.co/edit/NULN2U)
+[http://embed.plnkr.co/NULN2U/](http://embed.plnkr.co/NULN2U/)
 
 ## MIT License
 
